@@ -27,12 +27,12 @@
     optional_publish:
      #Assignment
 
-workflows:
-  simple_workflow:
-    jobs:
-      - build
-      - test:
-          requires:
-            -build
+  workflows:
+    simple_workflow:
+      jobs:
+        - build
+        - test:
+            requires:
+              -build
 
     
