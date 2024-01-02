@@ -8,10 +8,10 @@
       docker:
         - image: cimg/node:16.10
       steps:
-        - checkout
+        -checkout
         - node/install-packages:
           pkg-manager: npm
-        - run: |
+        - run: 
           echo "Installing dependencies..."
           npm install
 
