@@ -12,8 +12,8 @@
         - node/install-packages:
           pkg-manager: npm
         - run: |
-          echo "Installing dependencies..."
-          npm install
+            echo "Installing dependencies..."
+            npm install
     test:
       docker:
         - image: cimg/node:16.10
