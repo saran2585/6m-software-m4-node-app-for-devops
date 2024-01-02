@@ -10,8 +10,8 @@
       steps:
         - checkout
         - node/install-packages:
-          pkg-manager: npm
-        - run:
+            pkg-manager: npm
+        - run: 
           echo "Installing dependencies..."
           npm install
 
