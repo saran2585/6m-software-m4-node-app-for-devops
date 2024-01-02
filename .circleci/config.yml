@@ -1,31 +1,31 @@
-  version: 2.1
+version: 2.1
 
-  orbs:
-    node: circleci/node@5.0.1
+orbs:
+  node: circleci/node@5.0.1
 
-  jobs:
-    build:
-      docker:
-        - image: cimg/node:16.10
-      steps:
-        - checkout
-        - node/install-packages:
+jobs:
+  build:
+    docker:
+      - image: cimg/node:16.10
+    steps:
+      - checkout
+      - node/install-packages:
+        pkg-manager: npm
+      - run: |
+          echo "Installing dependencies..."
+          npm install
+  test:
+    docker:
+      - image: cimg/node:16.10
+    steps:
+      - checkout
+      - node/install-packages:
           pkg-manager: npm
-        - run: |
-            echo "Installing dependencies..."
-            npm install
-    test:
-      docker:
-        - image: cimg/node:16.10
-      steps:
-        - checkout
-        - node/install-packages:
-            pkg-manager: npm
-        - run: |
-            echo "Running tests..."
-            npm test
-    optional_publish:
-     #Assignment
+      - run: |
+          echo "Running tests..."
+          npm test
+  optional_publish:
+    #Assignment
 
 workflows:
   simple_workflow:
